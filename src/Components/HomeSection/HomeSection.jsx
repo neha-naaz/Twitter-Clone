@@ -5,6 +5,7 @@ import TagFacesIcon from "@mui/icons-material/TagFaces";
 import { useFormik } from "formik";
 import React, { useState } from "react";
 import * as Yup from "yup";
+import TweetCard from "./TweetCard";
 
 const validationSchema = Yup.object().shape({
   content: Yup.string().required("Tweet text is required"),
@@ -94,6 +95,9 @@ const HomeSection = () => {
             </form>
           </div>
         </div>
+      </section>
+      <section>
+        <TweetCard/>
       </section>
     </div>
   );

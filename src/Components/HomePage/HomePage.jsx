@@ -1,20 +1,23 @@
 import { Grid } from "@mui/material";
-import Navigation from '../Navigation/Navigation';
+import Navigation from "../Navigation/Navigation";
+import HomeSection from "../HomeSection/HomeSection";
+import React from "react";
 
 export default function Homepage() {
   return (
-    <Grid container px={5} sx={{ px: { lg: 36 } }} justifyContent="space-between">
-      <Grid item xs={0} lg={2.5} sx={{ display: { xs: "none", lg: "block" } }}>
-        <Navigation/>
+    <Grid container xs={12} className="px-5 lg:px-36 justify-between">
+
+      <Grid item xs={0} lg={2.5} className="hidden lg:block w-full relative">
+        <Navigation />
       </Grid>
 
-      <Grid item xs={12} lg={6}>
-        <p style={{ textAlign: "center" }}>middle part</p>
+      <Grid item xs={12} lg={6} className="hidden lg:block w-full relative">
+        <HomeSection />
       </Grid>
 
-      <Grid item xs={0} lg={3} sx={{ display: { xs: "none", lg: "block" } }}>
+      <Grid item xs={0} lg={3} className="hidden lg:block w-full relative">
         <p style={{ textAlign: "center" }}>right part</p>
       </Grid>
     </Grid>
-  );
+  )
 }
