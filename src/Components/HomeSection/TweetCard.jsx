@@ -8,6 +8,7 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FileUploadIcon from "@mui/icons-material/FileUpload";
 import BarChartIcon from "@mui/icons-material/BarChart";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import { FavoriteOutlined } from "@mui/icons-material";
 
 const TweetCard = () => {
   const navigate = useNavigate();
@@ -23,9 +24,15 @@ const TweetCard = () => {
     console.log("delete tweet");
     handleClose();
   };
-  const handleOpenReplyModel=()=>{
+  const handleOpenReplyModel = () => {
     console.log("open model");
-  }
+  };
+  const handleCreateRetweet = () => {
+    console.log("retweet");
+  };
+  const handleLikeTweet = () => {
+    console.log("Like Tweet");
+  };
   return (
     <div className="">
       {/* <div className='flex items-center fot-semibold text-gray-700 py-2'>
@@ -84,9 +91,59 @@ const TweetCard = () => {
                 alt=""
               />
             </div>
-            <div className="py-5 flex-wrap justify-between items-center">
+            <div className="py-5 flex flex-wrap justify-between items-center">
               <div className="space-x-3 flex items-center text-gray-600">
-                <ChatBubbleOutlineIcon className="cursor-pointer" onClick={handleOpenReplyModel}></ChatBubbleOutlineIcon>
+                <ChatBubbleOutlineIcon
+                  className="cursor-pointer"
+                  onClick={handleOpenReplyModel}
+                />
+                <p>43</p>
+              </div>
+              <div
+                className={`${
+                  true ? "text-pink-600" : "text-gray-600"
+                } space-x-3 flex items-center`}
+              >
+                <RepeatIcon
+                  onClick={handleCreateRetweet}
+                  className="cursor-pointer"
+                />
+                <p>54</p>
+              </div>
+
+              <div
+                className={`${
+                  true ? "text-pink-600" : "text-gray-600"
+                } space-x-3 flex items-center`}
+              >
+                {true ? (
+                  <FavoriteIcon
+                    onClick={handleLikeTweet}
+                    className="cursor-pointer"
+                  />
+                ) : (
+                  <FavoriteOutlined
+                    onClick={handleLikeTweet}
+                    className="cursor-pointer"
+                  />
+                )}
+                <p>54</p>
+              </div>
+
+              <div className="space-x-3 flex items-center text-gray-600">
+                <BarChartIcon
+                  className="cursor-pointer"
+                  onClick={handleOpenReplyModel}
+                />
+                <p>43</p>
+              </div>
+
+              <div className="space-x-3 flex items-center text-gray-600">
+                <FileUploadIcon
+                  className="cursor-pointer"
+                  onClick={handleOpenReplyModel}
+                />
+                <p>43</p>
               </div>
             </div>
           </div>
