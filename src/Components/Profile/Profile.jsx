@@ -85,7 +85,7 @@ const Profile = () => {
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
             expedita eaque illo aliquam eius nostrum excepturi! Ad mollitia
-            deserunt corporis, labore, esse libero excepturi expedita ipsam
+            deserunt corporis, esse libero excepturi expedita ipsam
             necessitatibus id ipsa quaerat.
           </p>
           <div className="py-1 flex space-x-5">
