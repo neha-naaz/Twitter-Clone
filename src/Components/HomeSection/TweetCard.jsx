@@ -9,11 +9,16 @@ import FileUploadIcon from "@mui/icons-material/FileUpload";
 import BarChartIcon from "@mui/icons-material/BarChart";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { FavoriteOutlined } from "@mui/icons-material";
+import ReplyModel from './ReplyModel';
 
 const TweetCard = () => {
-  const navigate = useNavigate();
+  const navigate=useNavigate();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
+  const[openReplyModel, setOpenReplyModel]=React.useState(false);
+  const handleOpenReplyModel = () => setOpenReplyModel(true);
+  const handleCloseReplyModel = () => setOpenReplyModel(false);
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -24,9 +29,7 @@ const TweetCard = () => {
     console.log("delete tweet");
     handleClose();
   };
-  const handleOpenReplyModel = () => {
-    console.log("open model");
-  };
+
   const handleCreateRetweet = () => {
     console.log("retweet");
   };
@@ -34,7 +37,7 @@ const TweetCard = () => {
     console.log("Like Tweet");
   };
   return (
-    <div className="">
+    <React.Fragment>
       {/* <div className='flex items-center fot-semibold text-gray-700 py-2'>
             <RepeatIcon/>
             <p>You Retweet</p>
@@ -83,7 +86,7 @@ const TweetCard = () => {
             </div>
           </div>
           <div className="mt-2">
-            <div className="cursor-pointer ">
+            <div onClick={()=>navigate(`/tweet/${3}`)}  className="cursor-pointer ">
               <p className="mb-2 p-0">nice tutorial</p>
               <img
                 className="w-[28rem] border border-gray-400 p-5 rounded-md"
@@ -149,7 +152,11 @@ const TweetCard = () => {
           </div>
         </div>
       </div>
-    </div>
+
+      <section>
+        <ReplyModel handleClose={handleCloseReplyModel} open={openReplyModel}/>
+      </section>
+    </React.Fragment>
   );
 };
 
